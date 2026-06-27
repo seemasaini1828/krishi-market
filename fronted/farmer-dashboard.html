@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Farmer Dashboard
+</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<div class="sidebar">
+
+<h2>Farmer Panel</h2>
+
+<ul>
+
+<li>
+<a href="#">
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="#productForm">
+Add Product
+</a>
+</li>
+
+<li>
+<a href="#products">
+My Products
+</a>
+</li>
+
+<li>
+<a href="#"
+onclick="logout()">
+Logout
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="main-content">
+
+<h1 id="farmerName">
+Welcome Farmer
+</h1>
+
+<br>
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>Total Products</h3>
+<p id="totalProducts">
+0
+</p>
+</div>
+
+<div class="stat-card">
+<h3>Total Orders</h3>
+<p>15</p>
+</div>
+
+<div class="stat-card">
+<h3>Revenue</h3>
+<p>₹ 25,000</p>
+</div>
+
+</div>
+
+<br>
+
+<div
+class="form-container"
+id="productForm"
+>
+
+<h2 class="form-title">
+Add Product
+</h2>
+
+<form id="addProductForm">
+
+<div class="form-group">
+
+<label>
+Product Name
+</label>
+
+<input
+type="text"
+id="productName"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Category
+</label>
+
+<select
+id="productCategory">
+
+<option>
+Vegetables
+</option>
+
+<option>
+Fruits
+</option>
+
+<option>
+Dairy
+</option>
+
+<option>
+Grains
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+Price
+</label>
+
+<input
+type="number"
+id="productPrice"
+required>
+
+</div>
+
+<button
+type="submit"
+class="form-btn">
+
+Add Product
+
+</button>
+
+</form>
+
+</div>
+
+<br>
+
+<h2>
+My Products
+</h2>
+
+<br>
+
+<div
+id="productList"
+class="grid grid-3"
+>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/farmer.js"></script>
+
+</body>
+
+</html>

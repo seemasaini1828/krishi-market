@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Products - Krishi Market</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌾 Krishi Market
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="farmers.html">Farmers</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+
+</nav>
+
+<!-- Search Section -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Fresh Farm Products
+    </h2>
+
+    <div style="max-width:900px;margin:auto;display:flex;gap:10px;flex-wrap:wrap;">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+            style="flex:1;padding:12px;border:1px solid #ccc;border-radius:8px;"
+        >
+
+        <select
+            id="categoryFilter"
+            style="padding:12px;border:1px solid #ccc;border-radius:8px;"
+        >
+            <option value="all">All Categories</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Grains">Grains</option>
+        </select>
+
+    </div>
+
+</section>
+
+<!-- Products Grid -->
+
+<section class="section">
+
+    <div class="grid grid-4" id="productsContainer">
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Krishi Market</p>
+</footer>
+
+<script src="js/products.js"></script>
+
+</body>
+
+</html>

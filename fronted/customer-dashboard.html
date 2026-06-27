@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Customer Dashboard</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<div class="sidebar">
+
+<h2>Customer Panel</h2>
+
+<ul>
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="products.html">
+Products
+</a>
+</li>
+
+<li>
+<a href="cart.html">
+My Cart
+</a>
+</li>
+
+<li>
+<a href="#"
+onclick="logout()">
+Logout
+</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="main-content">
+
+<h1 id="welcomeUser">
+Welcome
+</h1>
+
+<br>
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>Total Orders</h3>
+<p>12</p>
+</div>
+
+<div class="stat-card">
+<h3>Cart Items</h3>
+<p id="cartCount">0</p>
+</div>
+
+<div class="stat-card">
+<h3>Saved Products</h3>
+<p>8</p>
+</div>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<div class="card-body">
+
+<h2>
+Profile Information
+</h2>
+
+<br>
+
+<p id="userName"></p>
+<p id="userEmail"></p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/customer.js"></script>
+
+</body>
+
+</html>
