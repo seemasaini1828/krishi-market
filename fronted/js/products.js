@@ -7,7 +7,7 @@ async function loadProducts() {
 
   try {
 
-    const response = await fetch("http://localhost:5000/api/products");
+    const response = await fetch("https://krishi-market-ag8b.onrender.com/api/products");
 
     const data = await response.json();
 
@@ -109,7 +109,7 @@ async function addToCart(productId) {
 
   try {
 
-    const response = await fetch("http://localhost:5000/api/cart", {
+    const response = await fetch("https://krishi-market-ag8b.onrender.com/api/cart", {
 
       method: "POST",
 

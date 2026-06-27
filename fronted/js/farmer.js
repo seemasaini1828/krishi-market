@@ -15,7 +15,7 @@ async function loadProducts() {
   try {
 
     const response = await fetch(
-      "http://localhost:5000/api/products/myproducts",
+      "https://krishi-market-ag8b.onrender.com/api/products/myproducts",
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -84,7 +84,7 @@ document.getElementById("addProductForm")
     document.getElementById("productPrice").value;
 
   const response = await fetch(
-    "http://localhost:5000/api/products",
+    "https://krishi-market-ag8b.onrender.com/api/products",
     {
 
       method: "POST",
@@ -124,7 +124,7 @@ async function deleteProduct(id) {
   if (!confirm("Delete this product?")) return;
 
   const response = await fetch(
-    `http://localhost:5000/api/products/${id}`,
+    `https://krishi-market-ag8b.onrender.com/api/products/${id}`,
     {
 
       method: "DELETE",

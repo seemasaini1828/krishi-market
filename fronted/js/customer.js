@@ -20,7 +20,7 @@ async function loadOrders() {
   try {
 
     const response = await fetch(
-      "http://localhost:5000/api/orders",
+      "https://krishi-market-ag8b.onrender.com/api/orders",
       {
         headers: {
           Authorization: `Bearer ${token}`
@@ -49,7 +49,7 @@ async function loadCart() {
   try {
 
     const response = await fetch(
-      "http://localhost:5000/api/cart",
+      "https://krishi-market-ag8b.onrender.com/api/cart",
       {
         headers: {
           Authorization: `Bearer ${token}`

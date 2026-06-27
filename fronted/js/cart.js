@@ -9,7 +9,7 @@ async function loadCart() {
 
   try {
 
-    const response = await fetch("http://localhost:5000/api/cart", {
+    const response = await fetch("https://krishi-market-ag8b.onrender.com/api/cart", {
 
       headers: {
         Authorization: `Bearer ${token}`
@@ -92,7 +92,7 @@ async function checkout() {
 
   try {
 
-    const response = await fetch("http://localhost:5000/api/orders", {
+    const response = await fetch("https://krishi-market-ag8b.onrender.com/api/orders", {
 
       method: "POST",
 
