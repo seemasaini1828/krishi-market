@@ -1,139 +1,69 @@
-const users =
-JSON.parse(
-localStorage.getItem("users")
-) || [];
+const API_URL = "https://krishi-market-ag8b.onrender.com/api/admin";
 
-const products =
-JSON.parse(
-localStorage.getItem("farmerProducts")
-) || [];
+async function loadDashboard() {
+  try {
+    const usersRes = await fetch(`${API_URL}/users`);
+    const users = await usersRes.json();
 
-document.getElementById(
-"totalUsers"
-).innerText = users.length;
+    const productsRes = await fetch(`${API_URL}/products`);
+    const products = await productsRes.json();
 
-const farmers =
-users.filter(
-user => user.role === "farmer"
-);
+    // Dashboard Counts
+    document.getElementById("totalUsers").innerText = users.length;
 
-document.getElementById(
-"totalFarmers"
-).innerText =
-farmers.length;
+    const farmers = users.filter(user => user.role === "farmer");
+    document.getElementById("totalFarmers").innerText = farmers.length;
 
-document.getElementById(
-"totalProducts"
-).innerText =
-products.length;
+    document.getElementById("totalProducts").innerText = products.length;
 
-/* Users */
+    // Users List
+    const usersList = document.getElementById("usersList");
+    usersList.innerHTML = "";
 
-const usersList =
-document.getElementById(
-"usersList"
-);
+    users.forEach(user => {
+      usersList.innerHTML += `
+      <div class="card" style="margin-bottom:15px;">
+        <div class="card-body">
+          <h3>${user.name}</h3>
+          <p>${user.email}</p>
+          <p>${user.role}</p>
 
-users.forEach((user,index)=>{
+          <button
+            class="btn"
+            onclick="deleteUser('${user._id}')">
+            Delete
+          </button>
+        </div>
+      </div>
+      `;
+    });
 
-usersList.innerHTML += `
+    // Products List
+    const productsList = document.getElementById("productsList");
+    productsList.innerHTML = "";
 
-<div class="card" style="margin-bottom:15px;">
+    products.forEach(product => {
+      productsList.innerHTML += `
+      <div class="card" style="margin-bottom:15px;">
+        <div class="card-body">
+          <h3>${product.productName}</h3>
+          <p>${product.category}</p>
+          <p>₹${product.price}</p>
 
-<div class="card-body">
+          <button
+            class="btn"
+            onclick="deleteProduct('${product._id}')">
+            Delete
+          </button>
+        </div>
+      </div>
+      `;
+    });
 
-<h3>${user.name}</h3>
-
-<p>${user.email}</p>
-
-<p>${user.role}</p>
-
-<button
-class="btn"
-onclick="deleteUser(${index})">
-
-Delete
-
-</button>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-/* Products */
-
-const productsList =
-document.getElementById(
-"productsList"
-);
-
-products.forEach((product,index)=>{
-
-productsList.innerHTML += `
-
-<div class="card" style="margin-bottom:15px;">
-
-<div class="card-body">
-
-<h3>${product.name}</h3>
-
-<p>${product.category}</p>
-
-<p>₹${product.price}</p>
-
-<button
-class="btn"
-onclick="deleteProduct(${index})">
-
-Delete
-
-</button>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-function deleteUser(index){
-
-users.splice(index,1);
-
-localStorage.setItem(
-"users",
-JSON.stringify(users)
-);
-
-location.reload();
-
+  } catch (error) {
+    console.error(error);
+    alert("Failed to load admin dashboard");
+  }
 }
 
-function deleteProduct(index){
-
-products.splice(index,1);
-
-localStorage.setItem(
-"farmerProducts",
-JSON.stringify(products)
-);
-
-location.reload();
-
-}
-
-function logout(){
-
-localStorage.removeItem(
-"currentUser"
-);
-
-window.location.href =
-"login.html";
-
-}
+loadDashboard();
