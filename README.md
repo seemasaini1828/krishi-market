@@ -116,6 +116,3 @@ This project is developed for educational purposes.
 
 Frontend:
 https://krishi-market.netlify.app
-
-Backend API:
-https://krishi-market-ag8b.onrender.com
