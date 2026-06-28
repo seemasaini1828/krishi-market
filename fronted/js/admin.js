@@ -67,3 +67,65 @@ async function loadDashboard() {
 }
 
 loadDashboard();
+
+
+async function deleteUser(id) {
+
+  if (!confirm("Are you sure you want to delete this user?")) {
+    return;
+  }
+
+  try {
+
+    const response = await fetch(
+      `${API_URL}/users/${id}`,
+      {
+        method: "DELETE"
+      }
+    );
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    loadDashboard();
+
+  } catch (error) {
+
+    console.error(error);
+    alert("Failed to delete user");
+
+  }
+
+}
+
+async function deleteProduct(id) {
+
+  if (!confirm("Are you sure you want to delete this product?")) {
+    return;
+  }
+
+  try {
+
+    const response = await fetch(
+      `${API_URL}/products/${id}`,
+      {
+        method: "DELETE"
+      }
+    );
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    loadDashboard();
+
+  } catch (error) {
+
+    console.error(error);
+    alert("Failed to delete product");
+
+  }
+
+}
+
